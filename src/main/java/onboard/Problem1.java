@@ -9,7 +9,7 @@ public class Problem1 {
 
         if(minute < 45) {
             hour--;
-            minute = 15 + minute;
+            minute += 15;
 
             if (hour < 0) {
                 hour = 23;
