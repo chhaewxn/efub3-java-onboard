@@ -1,12 +1,21 @@
 package onboard;
 
-/**
- * 리턴값 answer의 경우, 변수 초기값은 변경 가능합니다.
- * 다만 answer로 return하는 것은 변경하지 않도록 주의해주세요.
- */
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
 public class Problem4 {
     public static Integer solution(Integer number){
+        List<Integer> bits = new ArrayList<>();
+        while(number > 0){
+            bits.add(number % 10);
+            number = number / 10;
+        }
+        Collections.sort(bits, Collections.reverseOrder());
         Integer answer = 0;
+        for(Integer num : bits){
+            answer = answer * 10 + num;
+        }
         return answer;
     }
 }
