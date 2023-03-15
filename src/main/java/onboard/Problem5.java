@@ -5,20 +5,12 @@ import java.util.Arrays;
 public class Problem5 {
     public static Integer solution(Integer N, Integer K, Integer[] values){
         Integer answer = 0;
+        int price = K;
 
-        Integer[] coin = new Integer[K+1];
-        Arrays.fill(coin, 100000);
-        coin[0] = 0;
-
-        for(int i=1; i<=K; i++) {
-            for(int j=0; j<N; j++) {
-                if(i - values[j] >= 0) {
-                    coin[i] = Math.min(coin[i], coin[i-values[j]]+1);
-                }
-            }
+        for (int i = N-1; i>=0; i--){
+            answer += price/values[i];
+            price %= values[i];
         }
-
-        answer = coin[K] == 100000 ? -1 : coin[K];
         return answer;
     }
 }
