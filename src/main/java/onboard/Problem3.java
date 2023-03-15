@@ -16,9 +16,7 @@ public class Problem3 {
             sum += numbers.get(i);
         }
         int average = sum / 5;
-
-        int mid;
-        mid = numbers.get(numbers.size() / 2);
+        int mid = numbers.get(2);
 
         answer.add(average);
         answer.add(mid);

@@ -7,7 +7,7 @@ public class Problem5 {
         Integer answer = 0;
 
         Integer[] coin = new Integer[K+1];
-        Arrays.fill(coin, 100001);
+        Arrays.fill(coin, 100000);
         coin[0] = 0;
 
         for(int i=1; i<=K; i++) {
@@ -18,7 +18,7 @@ public class Problem5 {
             }
         }
 
-        answer = coin[K] == 100001 ? -1 : coin[K];
+        answer = coin[K] == 100000 ? -1 : coin[K];
         return answer;
     }
 }
